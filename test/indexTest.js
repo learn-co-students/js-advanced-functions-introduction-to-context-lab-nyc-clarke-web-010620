@@ -1,10 +1,13 @@
 describe("The payroll system", function () {
+  this.timeout(0)
   describe("populates a record from an Array", function () {
+    this.timeout(0)
     it("has a function called createEmployeeRecord", function () {
       expect(createEmployeeRecord).to.exist
     })
 
     describe("createEmployeeRecord", function () {
+      this.timeout(0)
       it("populates a firstName field from the 0th element", function () {
         let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.firstName).to.eq("Gray")
@@ -38,11 +41,13 @@ describe("The payroll system", function () {
   })
 
   describe("process an Array of Arrays into an Array of employee records", function () {
+    this.timeout(0)
     it("has a function called createEmployeeRecords", function () {
       expect(createEmployeeRecords).to.exist
     })
 
     describe("createEmployeeRecords", function () {
+      this.timeout(0)
       let employeeRecords;
 
       let twoRows = [
@@ -64,12 +69,14 @@ describe("The payroll system", function () {
   })
 
   describe("it adds a timeIn event Object to an employee's record of timeInEvents when provided an employee record and Date/Time String and returns the updated record", function () {
+    this.timeout(0)
 
     it("has a function called createTimeInEvent", function () {
       expect(createTimeInEvent).to.exist
     })
 
     describe("createTimeInEvent", function () {
+      this.timeout(0)
       let bpRecord, updatedBpRecord, newEvent
 
       it("creates the correct type", function () {
@@ -96,12 +103,14 @@ describe("The payroll system", function () {
   })
 
   describe("it adds a timeOut event Object to an employee's record of timeOutEvents when provided an employee record and Date/Time String and returns the updated record", function () {
+    this.timeout(0)
 
     it("has a function called createTimeOutEvent", function () {
       expect(createTimeOutEvent).to.exist
     })
 
     describe("createTimeOutEvent", function () {
+      this.timeout(0)
       let bpRecord, updatedBpRecord, newEvent
 
       it("creates the correct type", function () {
@@ -128,12 +137,14 @@ describe("The payroll system", function () {
   })
 
   describe("Given an employee record with a date-matched timeInEvent and timeOutEvent", function () {
+    this.timeout(0)
 
     it("hoursWorkedOnDate calculates the hours worked when given an employee record and a date", function () {
       expect(hoursWorkedOnDate).to.exist
     })
 
     describe("hoursWorkedOnDate", function () {
+      this.timeout(0)
       it("calculates that the employee worked 2 hours", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 1000])
         updatedBpRecord = createTimeInEvent(cRecord, "0044-03-15 0900")
@@ -144,12 +155,14 @@ describe("The payroll system", function () {
   })
 
   describe("Given an employee record with a date-matched timeInEvent and timeOutEvent", function () {
+    this.timeout(0)
 
     it("wagesEarnedOnDate multiplies the hours worked by the employee's rate per hour", function () {
       expect(wagesEarnedOnDate).to.exist
     })
 
     describe("wagesEarnedOnDate", function () {
+      this.timeout(0)
       it("calculates that the employee earned 54 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         updatedBpRecord = createTimeInEvent(cRecord, "0044-03-15 0900")
@@ -160,12 +173,14 @@ describe("The payroll system", function () {
   })
 
   describe("Given an employee record with MULTIPLE date-matched timeInEvent and timeOutEvent", function () {
+    this.timeout(0)
 
     it("allWagesFor aggregates all the dates' wages and adds them together", function () {
       expect(allWagesFor).to.exist
     })
 
     describe("allWagesFor", function () {
+      this.timeout(0)
       it("calculates that the employee earned 378 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         // Earns 324
@@ -181,11 +196,13 @@ describe("The payroll system", function () {
   })
 
   describe("Given an array of multiple employees", function () {
+    this.timeout(0)
     it("calculatePayroll aggregates all the dates' wages and adds them together", function () {
       expect(calculatePayroll).to.exist
     })
 
     describe("calculatePayroll", function () {
+      this.timeout(0)
       it("calculates that the employees earned 770 dollars", function () {
         let rRecord = createEmployeeRecord(["Rafiki", "", "Aide", 10])
         let sRecord = createEmployeeRecord(["Simba", "", "King", 100])
@@ -220,8 +237,11 @@ describe("The payroll system", function () {
   })
 
   describe("runs payroll using the mock data provided by Ultron data systems", function () {
+    this.timeout(0)
     describe("Dependent functions: createEmployeeRecords", function () {
+      this.timeout(0)
       describe("takes CSV data, returns an array of employee records", function () {
+        this.timeout(0)
         it("exists", function () {
           expect(createEmployeeRecords).to.exist
         })
@@ -240,6 +260,7 @@ describe("The payroll system", function () {
     })
 
     describe("Dependent functions: findEmployeeByFirstName", function () {
+      this.timeout(0)
       it("exists", function () {
         expect(findEmployeeByFirstName).to.exist
       })
@@ -256,6 +277,7 @@ describe("The payroll system", function () {
     })
 
     describe("Full Payroll Test", function () {
+      this.timeout(0)
       /* Imported data courtesy of Ultron Consulting services
        *
        * Why go for smart when you can go for artificially intelligent? -- Ultron
@@ -289,9 +311,11 @@ describe("The payroll system", function () {
       ]
 
       describe("from several imported CSV structures", function () {
+        this.timeout(0)
         let employeeRecords
 
         describe("calculatePayroll", function() {
+          this.timeout(0)
           it("exists", function () {
             expect(calculatePayroll).to.exist
           })
